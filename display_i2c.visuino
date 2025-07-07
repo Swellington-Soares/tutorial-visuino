@@ -1,0 +1,348 @@
+{
+  "Config": {
+    "Build": {
+      "Board": "arduino:avr:uno"
+    }
+  },
+  "Units": [
+    {
+      "*": [
+        {
+          "Name": "Arduino",
+          "Instance": {
+            "Digital": {
+              "*": [
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalInterruptChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMInterruptChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "OutputPin": {
+                    "SinkPins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.RandomAnalogGenerator1.SeedInputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                }
+              ]
+            },
+            "Modules": {
+              "*": [
+                {
+                  "+": "TArduinoEEPROMModule"
+                },
+                {
+                  "+": "TArduinoWatchdogTimerModule"
+                },
+                {
+                  "+": "TArduinoProcessor328Module"
+                }
+              ]
+            },
+            "Serial": {
+              "*": [
+                {
+                  "+": "TArduinoBreakHardwareSerial0"
+                }
+              ]
+            },
+            "I2CChannels": {
+              "*": [
+                {
+                  "InputPin": {
+                    "SourcePins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay2.OutputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoI2C"
+                }
+              ]
+            },
+            "SPIChannels": {
+              "*": [
+                {
+                  "+": "TArduinoSPI"
+                }
+              ]
+            },
+            "BoardType": "Arduino Uno R3",
+            "+": "TArduinoBoard"
+          },
+          "X": 1104,
+          "Y": 320,
+          "Type": "Component"
+        },
+        {
+          "Name": "LiquidCrystalDisplay2",
+          "Instance": {
+            "Elements": {
+              "*": [
+                {
+                  "Row": 1,
+                  "Name": "TextField1",
+                  "Column": 2,
+                  "InputPin": {
+                    "SourcePins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.TextValue1.OutputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoLiquidCrystalElementTextField"
+                },
+                {
+                  "Name": "AnalogField1",
+                  "Column": 2,
+                  "InputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.RandomAnalogGenerator1.OutputPin"
+                    }
+                  },
+                  "+": "TArduinoLiquidCrystalElementAnalogField"
+                },
+                {
+                  "Name": "DefineCustomCharacter1",
+                  "Pattern": {
+                    "AsString": "4,10,10,10,17,17,17,14"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter2",
+                  "Index": 1,
+                  "Pattern": {
+                    "AsString": "4,10,10,10,17,31,31,14"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter3",
+                  "Index": 2,
+                  "Pattern": {
+                    "AsString": "4,10,10,14,31,31,31,14"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter4",
+                  "Index": 3,
+                  "Pattern": {
+                    "AsString": "4,14,14,14,31,31,31,14"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter5",
+                  "Index": 4,
+                  "Pattern": {
+                    "AsString": "0,14,21,21,17,17,14,0"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter6",
+                  "Index": 5,
+                  "Pattern": {
+                    "AsString": "0,14,19,21,17,17,14,0"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter7",
+                  "Index": 6,
+                  "Pattern": {
+                    "AsString": "0,14,17,23,17,17,14,0"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter8",
+                  "Index": 7,
+                  "Pattern": {
+                    "AsString": "0,14,17,21,19,17,14,0"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "DefineCustomCharacter9",
+                  "Index": 7,
+                  "Pattern": {
+                    "AsString": "0,14,17,21,21,21,14,0"
+                  },
+                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
+                },
+                {
+                  "Name": "CustomCharacterField1",
+                  "+": "TArduinoLiquidCrystalElementCustomCharacterField"
+                },
+                {
+                  "Row": 1,
+                  "Name": "CustomCharacterField2",
+                  "Index": 4,
+                  "+": "TArduinoLiquidCrystalElementCustomCharacterField"
+                }
+              ]
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.Arduino.I2CChannels._Item0.InputPin",
+                  "Name": "__OpenWireRootUnit__.Arduino.I2CChannels.I2C.InputPin"
+                }
+              ]
+            },
+            "+": "TArduinoLiquidCrystalDisplayI2C"
+          },
+          "X": 832,
+          "Y": 304,
+          "Type": "Component"
+        },
+        {
+          "Name": "RandomAnalogGenerator1",
+          "Instance": {
+            "Min": 20,
+            "Max": 35,
+            "ClockInputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.ClockGenerator1.OutputPin"
+                }
+              ]
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements._Item1.InputPin",
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.AnalogField1.InputPin"
+                }
+              ]
+            },
+            "@": [
+              {
+                "SourcePin": {
+                  "ID": "__OpenWireRootUnit__.Arduino.Digital._Item17.OutputPin",
+                  "Name": "__OpenWireRootUnit__.Arduino.Digital.Digital[ 17 ]\/AnalogIn[ 3 ].OutputPin"
+                },
+                "@": "Seed",
+                "Component": "RandomAnalogGenerator1",
+                "PinName": "Seed",
+                "+": "TOWIntegerSinkPinBinding"
+              }
+            ],
+            "+": "TArduinoRandomAnalogGenerator"
+          },
+          "X": 448,
+          "Y": 256,
+          "Type": "Component"
+        },
+        {
+          "Name": "TextValue1",
+          "Instance": {
+            "+": "TArduinoTextValue",
+            "ClockInputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.ClockGenerator1.OutputPin"
+                }
+              ]
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements._Item0.InputPin",
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.TextField1.InputPin"
+                }
+              ]
+            },
+            "Value": "12:56"
+          },
+          "X": 448,
+          "Y": 352,
+          "Type": "Component"
+        },
+        {
+          "Name": "ClockGenerator1",
+          "Instance": {
+            "Frequency": 5,
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.TextValue1.ClockInputPin"
+                },
+                {
+                  "ID": "__OpenWireRootUnit__.RandomAnalogGenerator1.ClockInputPin"
+                }
+              ]
+            },
+            "+": "TArduinoClockGenerator"
+          },
+          "X": 256,
+          "Y": 304,
+          "Type": "Component"
+        }
+      ],
+      "Name": "__OpenWireRootUnit__",
+      "Type": "Diagram"
+    }
+  ],
+  "Version": "2",
+  "Content": "OpenWire Diagram",
+  "Product": "Visuino Pro - Visual Arduino Programming"
+}
