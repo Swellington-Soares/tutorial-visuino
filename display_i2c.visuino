@@ -67,7 +67,8 @@
                   "OutputPin": {
                     "SinkPins": [
                       {
-                        "ID": "__OpenWireRootUnit__.RandomAnalogGenerator1.SeedInputPin"
+                        "ID": "__OpenWireRootUnit__.RandomAnalogGenerator1.SeedInputPin",
+                        "Name": "__OpenWireRootUnit__.RandomAnalogGenerator1.Seed"
                       }
                     ]
                   },
@@ -221,21 +222,35 @@
                   "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
                 },
                 {
-                  "Name": "DefineCustomCharacter9",
-                  "Index": 7,
-                  "Pattern": {
-                    "AsString": "0,14,17,21,21,21,14,0"
-                  },
-                  "+": "TArduinoLiquidCrystalElementDefineCustomCharacter"
-                },
-                {
                   "Name": "CustomCharacterField1",
+                  "@": [
+                    {
+                      "SourcePin": {
+                        "ID": "__OpenWireRootUnit__.Counter1.OutputPin"
+                      },
+                      "@": "Index",
+                      "Component": "LiquidCrystalDisplay2",
+                      "PinName": "Elements.Item [ 10 ].Index",
+                      "+": "TOWCardinalSinkPinBinding"
+                    }
+                  ],
                   "+": "TArduinoLiquidCrystalElementCustomCharacterField"
                 },
                 {
                   "Row": 1,
                   "Name": "CustomCharacterField2",
                   "Index": 4,
+                  "@": [
+                    {
+                      "SourcePin": {
+                        "ID": "__OpenWireRootUnit__.Counter2.OutputPin"
+                      },
+                      "@": "Index",
+                      "Component": "LiquidCrystalDisplay2",
+                      "PinName": "Elements.Item [ 11 ].Index",
+                      "+": "TOWCardinalSinkPinBinding"
+                    }
+                  ],
                   "+": "TArduinoLiquidCrystalElementCustomCharacterField"
                 }
               ]
@@ -336,10 +351,93 @@
           "X": 256,
           "Y": 304,
           "Type": "Component"
+        },
+        {
+          "Name": "Counter1",
+          "Instance": {
+            "Min": {
+              "Value": 0
+            },
+            "Max": {
+              "Value": 3
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.*._10.IndexInputPin",
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.CustomCharacterField1.IndexInputPin"
+                }
+              ]
+            },
+            "InputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.ClockGenerator2.OutputPin"
+                }
+              ]
+            },
+            "+": "TArduinoCounter"
+          },
+          "X": 480,
+          "Y": 496,
+          "Type": "Component"
+        },
+        {
+          "Name": "Counter2",
+          "Instance": {
+            "Min": {
+              "Value": 4
+            },
+            "InitialValue": 4,
+            "Max": {
+              "Value": 7
+            },
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.*._11.IndexInputPin",
+                  "Name": "__OpenWireRootUnit__.LiquidCrystalDisplay2.Elements.CustomCharacterField2.IndexInputPin"
+                }
+              ]
+            },
+            "InputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.ClockGenerator2.OutputPin"
+                }
+              ]
+            },
+            "+": "TArduinoCounter"
+          },
+          "X": 480,
+          "Y": 624,
+          "Type": "Component"
+        },
+        {
+          "Name": "ClockGenerator2",
+          "Instance": {
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.Counter1.InputPin"
+                },
+                {
+                  "ID": "__OpenWireRootUnit__.Counter2.InputPin"
+                }
+              ]
+            },
+            "+": "TArduinoClockGenerator"
+          },
+          "X": 304,
+          "Y": 464,
+          "Type": "Component"
         }
       ],
       "Name": "__OpenWireRootUnit__",
-      "Type": "Diagram"
+      "Type": "Diagram",
+      "Selection": [
+        "ClockGenerator2"
+      ]
     }
   ],
   "Version": "2",
